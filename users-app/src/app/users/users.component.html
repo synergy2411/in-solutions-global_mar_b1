@@ -1,18 +1,12 @@
 <ul class="list-group">
-    <li class="list-group-item">
-        <div class="row">
-            <div class="col-4">
-                <app-user-image></app-user-image>
-                <div class="text-center">
-                    <img [src]="user.image" class="rounded-circle img-fluid">
-                    <br><br>
-                    <button class="btn btn-info btn-block" 
-                        (click)="onMoreInfo(user)">More Info</button>
-                </div>
-            </div>
-            <div class="col-8">
-                <app-user-info [user]="user"></app-user-info>
-            </div>
-        </div>
-    </li>
+<li class="list-group-item">
+<div class="row">
+<div class="col-4">
+    <app-user-image (userEvent) ="onMoreInfo($event)" [user]="user"></app-user-image>
+</div>
+<div class="col-8">
+    <app-user-info [user]="user"></app-user-info>
+</div>
+</div>
+</li>
 </ul>

@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-user-image',
   templateUrl: './user-image.component.html',
   styleUrls: ['./user-image.component.css']
 })
-export class UserImageComponent implements OnInit {
+export class UserImageComponent {
 
-  constructor() { }
+  @Input() user : User;
+  @Output() userEvent = new EventEmitter<User>();
 
-  ngOnInit(): void {
+  onbtnClick(user : User){
+    this.userEvent.emit(user);
   }
-
 }
