@@ -1,7 +1,18 @@
-<ul>
-    <li>
-        <h3> {{ user.firstName }} {{ user.lastName }}</h3>
-        <p> Date of Birth : <span [innerText]="user.dob"></span> </p>
-        <p> Income : <span [innerText]="user.income"></span> </p>
+<ul class="list-group">
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-4">
+                <app-user-image></app-user-image>
+                <div class="text-center">
+                    <img [src]="user.image" class="rounded-circle img-fluid">
+                    <br><br>
+                    <button class="btn btn-info btn-block" 
+                        (click)="onMoreInfo(user)">More Info</button>
+                </div>
+            </div>
+            <div class="col-8">
+                <app-user-info [user]="user"></app-user-info>
+            </div>
+        </div>
     </li>
 </ul>
