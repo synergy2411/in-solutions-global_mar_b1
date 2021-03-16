@@ -11,3 +11,6 @@ let obj : Person = {
 let foo2 = new Student1(obj);
 
 console.log(foo2.getMyDetails());
+
+
+// Webpack - module bundler
