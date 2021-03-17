@@ -21,6 +21,12 @@ export class UsersComponent implements OnInit
 
   ngOnInit(): void {
     this.users = USER_DATA;
+    // console.log("ngOnInit")
+  }
+
+  constructor(){
+    // console.log("constructor")
+    // this.users = USER_DATA;
   }
 
   // ngOnChanges(changes: SimpleChanges) {

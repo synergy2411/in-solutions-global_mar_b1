@@ -18,4 +18,8 @@ export class UserInfoComponent {
     this.myDynamicClass['features'] = !this.myDynamicClass['features']; 
   }
 
+  onTheEvent(color : string){
+    // console.log("Directive Color - ", color);
+  }
+
 }

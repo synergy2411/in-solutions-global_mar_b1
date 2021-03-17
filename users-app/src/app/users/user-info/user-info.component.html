@@ -1,12 +1,18 @@
 <!-- <ng-content select="header"></ng-content> -->
 
-<h3 appHighlight [favColor] = "'blue'"> {{ user.firstName }} {{ user.lastName }}</h3>
+{{ user | json }}
+
+
+<h3 appHighlight [favColor] = "'blue'" (theEvent) = "onTheEvent($event)">
+    {{ user.firstName | titlecase }} {{ user.lastName | titlecase }}</h3>
 
 <!-- <p [ngClass]="['features', 'my-border']" > Date of Birth : <span [innerText]="user.dob"></span> </p> -->
-<p [ngClass]="myDynamicClass" > Date of Birth : <span [innerText]="user.dob"></span> </p>
+<p [ngClass]="myDynamicClass" > 
+    Date of Birth : <span [innerText]="user.dob | date : 'dd/MM/yyyy' "></span> </p>
 <button class="btn btn-sm" (click)="onToggle()">Toggle</button>
 
-<p *ngIf="user.isWorking; else ElseTemplate"> Income : <span [innerText]="user.income"></span> </p>
+<p *ngIf="user.isWorking; else ElseTemplate"> 
+    Income : <span [innerText]="user.income | currency : 'INR' "></span> </p>
 <!-- <p [ngStyle] = "myDynamicStyle"> Total Votes : <span [innerText]="user.votes"></span> -->
 <p> Total Votes : <span [innerText]="user.votes"></span>
     <!-- <p>
