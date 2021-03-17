@@ -1,7 +1,8 @@
-<h3>Title from Parent : {{ title }} </h3>
+<!-- <h3>Title from Parent : {{ title }} </h3> -->
 
 <ul class="list-group">
-    <li class="list-group-item">
+    <li class="list-group-item" *ngFor="let user of users; index as i; first as isFirst; last as isLast; even as isEven; odd as isOdd">
+        <!-- Index: {{ i }} || Even : {{ isEven }} || First : {{ isFirst }} || Odd : {{ isOdd }} || Last : {{ isLast }} -->
         <div class="row">
             <div class="col-4">
                 <app-user-image (userEvent)="onMoreInfo($event)" 
