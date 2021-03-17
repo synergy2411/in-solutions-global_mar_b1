@@ -1,8 +1,13 @@
-<ng-content select = "header"></ng-content>
+<!-- <ng-content select="header"></ng-content> -->
 
-<h3> {{ user.firstName }} {{ user.lastName }}</h3>
-<p> Date of Birth : <span [innerText]="user.dob"></span> </p>
+<h3 appHighlight> {{ user.firstName }} {{ user.lastName }}</h3>
+
+<!-- <p [ngClass]="['features', 'my-border']" > Date of Birth : <span [innerText]="user.dob"></span> </p> -->
+<p [ngClass]="myDynamicClass" > Date of Birth : <span [innerText]="user.dob"></span> </p>
+<button class="btn btn-sm" (click)="onToggle()">Toggle</button>
+
 <p *ngIf="user.isWorking; else ElseTemplate"> Income : <span [innerText]="user.income"></span> </p>
+<!-- <p [ngStyle] = "myDynamicStyle"> Total Votes : <span [innerText]="user.votes"></span> -->
 <p> Total Votes : <span [innerText]="user.votes"></span>
     <!-- <p>
         <ng-content></ng-content>
@@ -16,5 +21,11 @@
 <ng-template #ElseTemplate>
     Mr. {{user.lastName }} is not working now.
 </ng-template>
+
+<!-- <div [ngSwitch]="expr" >
+    <div *ngSwitchCase="">1</div>
+    <div *ngSwitchCase="2">2</div>
+    <div *ngSwitchCase="">3</div>
+</div> -->
 
 <!-- <ng-content select = "footer"></ng-content> -->
