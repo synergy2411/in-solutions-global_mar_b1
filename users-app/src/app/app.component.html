@@ -1,7 +1,11 @@
 <div class="container">
   <p class="text-center display-4">The Awesome App</p>
 
-  <app-users></app-users>
+  <input type="text" [(ngModel)] = "title">
+  <br>
+  <button class="btn btn-primary" (click)="showUsers = !showUsers" >Toggle Users Component</button>
+
+  <app-users [title]="title" *ngIf="showUsers"></app-users>
 
 
 </div>

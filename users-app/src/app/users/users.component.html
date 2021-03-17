@@ -1,12 +1,19 @@
+<h3>Title from Parent : {{ title }} </h3>
+
 <ul class="list-group">
-<li class="list-group-item">
-<div class="row">
-<div class="col-4">
-    <app-user-image (userEvent) ="onMoreInfo($event)" [user]="user"></app-user-image>
-</div>
-<div class="col-8">
-    <app-user-info [user]="user"></app-user-info>
-</div>
-</div>
-</li>
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-4">
+                <app-user-image (userEvent)="onMoreInfo($event)" 
+                    [user]="user"></app-user-image>
+            </div>
+            <div class="col-8">
+                <app-user-info [user]="user">
+                    <header>Some Header Info</header>
+                    <main>Main Content...</main>
+                    <footer>Footer Info</footer>
+                </app-user-info>
+            </div>
+        </div>
+    </li>
 </ul>

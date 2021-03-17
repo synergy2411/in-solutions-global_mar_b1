@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterContentChecked, AfterContentInit, AfterViewChecked,
+  AfterViewInit, Component, DoCheck, Input,
+  OnChanges, OnDestroy, OnInit, SimpleChanges
+} from '@angular/core';
+import { USER_DATA } from '../data/mocks';
 import { User } from '../model/user';
 
 @Component({
@@ -6,20 +11,29 @@ import { User } from '../model/user';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent{
+export class UsersComponent implements OnInit, OnChanges, DoCheck, AfterContentInit,
+  AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
-  user : User = {
-    firstName : "Bill",
-    lastName : "Gates",
-    dob : new Date("Dec 21, 1964"),
-    income : 50000,
-    isWorking : true,
-    company : "Microsoft",
-    image : "./assets/images/bill.jpg",
-    votes : 120
+  @Input() title: string;
+
+  user: User;
+
+  ngOnInit(): void {
+    this.user = USER_DATA;
   }
 
-  onMoreInfo(user : User){
+  ngOnChanges(changes: SimpleChanges) {
+    console.log("ngOnChanges", changes);
+  }
+  ngDoCheck() { console.log("ngDoCheck") }
+  ngAfterContentInit() { console.log("ngAfterContentInit") }
+  ngAfterContentChecked() { console.log("ngAfterContentChecked") }
+  ngAfterViewInit() { console.log("ngAfterViewInit") }
+  ngAfterViewChecked() { console.log("ngAfterViewChecked") }
+  ngOnDestroy() { console.log("ngOnDestroy") }
+
+
+  onMoreInfo(user: User) {
     alert(`Mr. ${user.lastName} is working with ${user.company}!!`);
   }
 
