@@ -9,12 +9,13 @@ import { UserInfoComponent } from './users/user-info/user-info.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { CountryCodePipe } from './pipes/country-code.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [         // Components | Directives | Pipes
     AppComponent, UsersComponent, 
     UserImageComponent, UserInfoComponent, HighlightDirective, 
-    PipeDemoComponent, CountryCodePipe
+    PipeDemoComponent, CountryCodePipe, FilterPipe
   ],
   imports: [              // Modules - Built-in or Custom Module
     BrowserModule,

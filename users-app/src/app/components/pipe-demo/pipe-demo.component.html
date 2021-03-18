@@ -3,3 +3,23 @@
     <br>
     Contact Number : {{ contact_number | countryCode : 'AUS'}}
 </h2>
+
+<br>
+
+<div class="row">
+    <div class="col-6">
+        <select name="" [(ngModel)]="filteredStatus" class="form-control">
+            <option value="done">Done Task</option>
+            <option value="pending">Pending Task</option>
+        </select>
+    </div>
+    <div class="col-6">
+        <button class="btn btn-block btn-dark" (click) ="onAddItem()">Add New Item</button>
+    </div>
+</div>
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let todo of todoList | filter : filteredStatus">
+        {{ todo.label }}
+    </li>
+</ul>
