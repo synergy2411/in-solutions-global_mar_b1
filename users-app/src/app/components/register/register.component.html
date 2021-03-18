@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-sm-8 col-md-6 offset-sm-2 offset-md-3">
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="registerForm">
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email : </label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              [formControl]="email"
+            />
+            <div
+              class="alert alert-danger"
+              [hidden]="email.valid || email.untouched"
+            >
+              <p>Something wrong with email -</p>
+              <div [hidden]="!email.hasError('required')">
+                <p>* Email is mandatory fied.</p>
+              </div>
+              <div [hidden]="!email.hasError('email')">
+                <p>* Email is not in proper format.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password : </label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              [formControl]="password"
+            />
+            <div [hidden]="password.valid || password.untouched"
+              class="alert alert-danger">
+                <p>Something wrong with password -</p>
+                <div [hidden]="!password.hasError('required')">
+                    <p>* Password is mandatory field.</p>
+                </div>
+                <div [hidden]="!password.hasError('minlength')">
+                    <p>* Password must have 6 characters.</p>
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button
+              class="btn btn-block btn-outline-success btn-sm"
+              (click)="onRegister()"
+              [disabled]="!registerForm.valid"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
