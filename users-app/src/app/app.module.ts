@@ -8,11 +8,13 @@ import { UserImageComponent } from './users/user-image/user-image.component';
 import { UserInfoComponent } from './users/user-info/user-info.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
+import { CountryCodePipe } from './pipes/country-code.pipe';
 
 @NgModule({
   declarations: [         // Components | Directives | Pipes
     AppComponent, UsersComponent, 
-    UserImageComponent, UserInfoComponent, HighlightDirective, PipeDemoComponent
+    UserImageComponent, UserInfoComponent, HighlightDirective, 
+    PipeDemoComponent, CountryCodePipe
   ],
   imports: [              // Modules - Built-in or Custom Module
     BrowserModule,
