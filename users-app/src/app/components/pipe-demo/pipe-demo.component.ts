@@ -32,3 +32,16 @@ export class PipeDemoComponent implements OnInit {
 
   ngOnInit(): void {}
 }
+
+
+
+// const user = {name : "Foo"}
+
+// - impure changes
+// user.name = "Bar";
+
+
+// Pure change
+// user = {
+//   name : "Bam"
+// }
