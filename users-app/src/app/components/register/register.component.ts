@@ -24,9 +24,9 @@ export class RegisterComponent implements OnInit {
   ]);
 
   confirmPassword(input : FormControl){
-    console.log(input);
+    // console.log(input);
     if(input.root && input.root.value){
-      console.log("Password - ", input.root.value.password);
+      // console.log("Password - ", input.root.value.password);
       const isPasswordMatch = input.root.value.password === input.value;
       return isPasswordMatch ? null : {passwordMatch : true}
     }

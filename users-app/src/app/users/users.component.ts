@@ -3,8 +3,9 @@ import {
   AfterViewInit, Component, DoCheck, Input,
   OnChanges, OnDestroy, OnInit, SimpleChanges
 } from '@angular/core';
-import { USER_DATA } from '../data/mocks';
+// import { USER_DATA } from '../data/mocks';
 import { User } from '../model/user';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-users',
@@ -20,14 +21,12 @@ export class UsersComponent implements OnInit
   users: User[];
 
   ngOnInit(): void {
-    this.users = USER_DATA;
+    // this.users = USER_DATA;
     // console.log("ngOnInit")
+    this.users = this.dataService.getUsers();
   }
 
-  constructor(){
-    // console.log("constructor")
-    // this.users = USER_DATA;
-  }
+  constructor(private dataService : DataService){}
 
   // ngOnChanges(changes: SimpleChanges) {
   //   console.log("ngOnChanges", changes);
