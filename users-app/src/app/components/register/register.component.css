@@ -10,3 +10,9 @@
 .ng-valid.ng-dirty[name="password"]{
     border-bottom: 3px greenyellow solid;
 }
+.ng-invalid.ng-dirty[name="cnfPassword"]{
+    border-bottom: 3px tomato solid;
+}
+.ng-valid.ng-dirty[name="cnfPassword"]{
+    border-bottom: 3px greenyellow solid;
+}

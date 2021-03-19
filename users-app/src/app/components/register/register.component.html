@@ -49,6 +49,23 @@
             </div>
           </div>
           <div class="form-group">
+            <label for="cnfPassword">Confirm Password :</label>
+            <input type="password" name="cnfPassword" 
+              [formControl]="cnfPassword" class="form-control">
+
+              <div class="alert alert-danger" 
+                [hidden]="cnfPassword.valid || cnfPassword.untouched">
+                <p>* Some problem with confirm Password -</p>
+                <div [hidden]="!cnfPassword.hasError('required')">
+                  <p>* Confirm Password is mandatory field.</p>
+                </div>
+                <div [hidden]="!cnfPassword.hasError('passwordMatch')">
+                  <p>* Confirm Password does not match with password.</p>
+                </div>
+              </div>
+
+          </div>
+          <div class="form-group">
             <button
               class="btn btn-block btn-outline-success btn-sm"
               (click)="onRegister()"
