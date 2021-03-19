@@ -14,8 +14,14 @@ export class RegisterComponent implements OnInit {
   ]);
   password = new FormControl('', [
     Validators.required,
-    Validators.minLength(6)
+    Validators.minLength(6),
+    this.hasExclamation
   ]);
+
+  hasExclamation(input : FormControl){
+    const hasExcl = input.value.indexOf("!") >=0
+    return hasExcl ? null : {hasExclamation : true}
+  }
 
   registerForm : FormGroup;
 

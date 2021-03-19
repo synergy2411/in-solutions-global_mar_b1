@@ -43,6 +43,9 @@
                 <div [hidden]="!password.hasError('minlength')">
                     <p>* Password must have 6 characters.</p>
                 </div>
+                <div [hidden]="!password.hasError('hasExclamation')">
+                  <p>* Password must contain Exclamation mark.</p>
+                </div>
             </div>
           </div>
           <div class="form-group">
