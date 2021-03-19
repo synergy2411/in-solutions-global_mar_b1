@@ -10,7 +10,8 @@ import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
+  // providers : [DataService]
 })
 export class UsersComponent implements OnInit
   // OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy 
@@ -25,10 +26,17 @@ export class UsersComponent implements OnInit
     // console.log("ngOnInit")
     // this.users = this.dataService.getUsers();
     this.dataService.getUsersfromJson()
-      .subscribe(response => this.users = <User[]> response['userdata']);
+      .subscribe(
+        response => this.users = <User[]> response['userdata'],
+        err => console.log(err),
+        () => console.log("[COMPLETED]"));
   }
 
-  constructor(private dataService : DataService){}
+  constructor(public dataService : DataService){}
+
+  onDecrement(){
+    this.dataService.counter--;
+  }
 
   // ngOnChanges(changes: SimpleChanges) {
   //   console.log("ngOnChanges", changes);

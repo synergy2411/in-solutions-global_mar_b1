@@ -1,0 +1,12 @@
+<p>observable-demo works!</p>
+
+<button class="btn btn-dark" (click)="onSub()">Subscribe</button>
+<button class="btn btn-dark" (click)="onUnsub()">Unsubscribe</button>
+
+<hr>
+
+<ul>
+    <li *ngFor="let pkg of packages">
+        {{ pkg }}
+    </li>
+</ul>

@@ -2,6 +2,8 @@
 
 <!-- {{ users| json}} -->
 
+<h4>Counter in Users : {{ dataService.counter }}</h4>
+<button class="btn btn-light" (click)="onDecrement()">Decrement Counter</button>
 
 <ul class="list-group">
     <li class="list-group-item" *ngFor="let user of users; index as i; first as isFirst; last as isLast; even as isEven; odd as isOdd">

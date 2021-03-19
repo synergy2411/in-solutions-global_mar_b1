@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class DataService {
 
+  counter : number = 0;
+
   constructor(private httpClient : HttpClient){}
 
   getUsersfromJson(){

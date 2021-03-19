@@ -14,13 +14,14 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DataService } from './services/data.service';
+import { ObservableDemoComponent } from './components/observable-demo/observable-demo.component';
 
 @NgModule({
   declarations: [         // Components | Directives | Pipes
     AppComponent, UsersComponent, 
     UserImageComponent, UserInfoComponent, HighlightDirective, 
     PipeDemoComponent, CountryCodePipe, FilterPipe, LoginComponent, 
-    RegisterComponent
+    RegisterComponent, ObservableDemoComponent
   ],
   imports: [              // Modules - Built-in or Custom Module
     BrowserModule,
