@@ -23,7 +23,9 @@ export class UsersComponent implements OnInit
   ngOnInit(): void {
     // this.users = USER_DATA;
     // console.log("ngOnInit")
-    this.users = this.dataService.getUsers();
+    // this.users = this.dataService.getUsers();
+    this.dataService.getUsersfromJson()
+      .subscribe(response => this.users = <User[]> response['userdata']);
   }
 
   constructor(private dataService : DataService){}
