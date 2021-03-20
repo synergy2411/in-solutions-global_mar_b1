@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { USER_DATA } from '../data/mocks';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../model/user';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class DataService {
@@ -9,10 +10,15 @@ export class DataService {
   counter : number = 0;
   private BASE_URL : string = "https://in-solutions-28661-default-rtdb.firebaseio.com/userdata.json";
 
-  constructor(private httpClient : HttpClient){}
+  constructor(
+    private httpClient : HttpClient,
+    private authService : AuthService
+    ){}
 
   getUsersFromApi(){
-    return this.httpClient.get<User[]>(this.BASE_URL);
+    return this.httpClient.get<User[]>(
+      `${this.BASE_URL}?auth=${this.authService.getToken()}`
+      );
   }
 
   createUser(){

@@ -21,6 +21,7 @@
   <br>
 
   <!-- <app-users [title]="title" *ngIf="showUsers"></app-users> -->
+  <app-users [title]="title" *ngIf="authService.isAuthenticated()"></app-users>
 
 
 </div>
