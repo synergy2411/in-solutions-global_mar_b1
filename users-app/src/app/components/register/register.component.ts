@@ -5,6 +5,7 @@ import {
   FormBuilder,
   Validators,
 } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -23,12 +24,12 @@ export class RegisterComponent implements OnInit {
     this.confirmPassword,
   ]);
 
-  confirmPassword(input : FormControl){
+  confirmPassword(input: FormControl) {
     // console.log(input);
-    if(input.root && input.root.value){
+    if (input.root && input.root.value) {
       // console.log("Password - ", input.root.value.password);
       const isPasswordMatch = input.root.value.password === input.value;
-      return isPasswordMatch ? null : {passwordMatch : true}
+      return isPasswordMatch ? null : { passwordMatch: true };
     }
   }
 
@@ -39,16 +40,21 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, 
+    private authService: AuthService) {
     this.registerForm = this.fb.group({
       email: this.email,
       password: this.password,
-      cnfPassword : this.cnfPassword
+      cnfPassword: this.cnfPassword,
     });
   }
 
   onRegister() {
     console.log(this.registerForm);
+    this.authService.registerUser(
+      this.registerForm.value.email,
+      this.registerForm.value.password
+      )
   }
 
   ngOnInit(): void {}

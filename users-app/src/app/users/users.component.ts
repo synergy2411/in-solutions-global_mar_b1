@@ -25,11 +25,21 @@ export class UsersComponent implements OnInit
     // this.users = USER_DATA;
     // console.log("ngOnInit")
     // this.users = this.dataService.getUsers();
-    this.dataService.getUsersfromJson()
+    // this.dataService.getUsersfromJson()
+    //   .subscribe(
+    //     response => this.users = <User[]> response['userdata'],
+    //     err => console.log(err),
+    //     () => console.log("[COMPLETED]"));
+    this.dataService.getUsersFromApi()
       .subscribe(
-        response => this.users = <User[]> response['userdata'],
+        (data : User[]) => {
+          this.users = data;
+        },
         err => console.log(err),
-        () => console.log("[COMPLETED]"));
+        () => {console.log("[COMPLETED]")}
+      )
+
+      // this.dataService.createUser();
   }
 
   constructor(public dataService : DataService){}

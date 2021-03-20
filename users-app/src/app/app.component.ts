@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from './services/data.service';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,18 @@ import { DataService } from './services/data.service';
   styleUrls: ['./app.component.css'],
   // providers : [DataService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'users-app';
   showUsers : boolean = true;
   
   constructor(public dataService : DataService){}
+
+  ngOnInit(){
+    firebase.default.initializeApp({
+      apiKey: "AIzaSyB53EEXhYPRSx92KfR5kptULoUSc1Ilcoo",
+      authDomain: "in-solutions-28661.firebaseapp.com"
+    })
+  }
 
   onIncrement(){
     this.dataService.counter++;
