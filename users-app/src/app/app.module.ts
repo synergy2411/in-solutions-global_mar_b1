@@ -16,6 +16,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { DataService } from './services/data.service';
 import { ObservableDemoComponent } from './components/observable-demo/observable-demo.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { LoggerInterceptorService } from './services/logger-interceptor.service';
 
 @NgModule({
   declarations: [         // Components | Directives | Pipes
@@ -34,6 +35,10 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
     {
       provide : HTTP_INTERCEPTORS,
       useClass : AuthInterceptorService,
+      multi : true
+    },{
+      provide : HTTP_INTERCEPTORS,
+      useClass : LoggerInterceptorService,
       multi : true
     }
   ],          // Service - Register the Service with providers

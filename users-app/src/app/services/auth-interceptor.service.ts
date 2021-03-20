@@ -9,7 +9,10 @@ export class AuthInterceptorService implements HttpInterceptor {
   constructor(private authService : AuthService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // console.log("AUTH INTERCEPTOR WORKS", req);
+    console.log("AUTH INTERCEPTOR WORKS", req);
+    // if(req['url'] = ""){
+
+    // }
     const clonedReq =  req.clone({
       params : new HttpParams().set("auth", this.authService.getToken() )
     })
