@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription, from } from 'rxjs';
 import { map, tap, take } from 'rxjs/operators';
 
@@ -29,7 +30,7 @@ export class ObservableDemoComponent {
       observer.complete();
     }, 10000);
   });
-  
+
   packages : Array<string> = [];
   unsub$ : Subscription;
   unSubNumber$ : Subscription;
@@ -58,5 +59,12 @@ export class ObservableDemoComponent {
     this.unsub$.unsubscribe();
     this.unSubNumber$.unsubscribe();
   }
+
+  constructor(private router : Router){}
+
+  moveToLogin(){
+    this.router.navigate(["/login"]);
+  }
+
 
 }
