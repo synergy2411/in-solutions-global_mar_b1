@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class OverviewComponent implements OnInit {
 
   id : number;
+  name : string;
   constructor(private route : ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -16,6 +17,7 @@ export class OverviewComponent implements OnInit {
     // this.id = +this.route.snapshot.params['id'];
     this.route.params.subscribe(params => {
       this.id = params['id'];
+      this.name = params['name'];
     })
   }
 

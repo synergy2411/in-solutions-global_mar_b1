@@ -36,7 +36,7 @@ export const APP_ROUTES : Routes = [
     component : ProductComponent,
     children : [
       {
-        path : "overview/:id",
+        path : "overview/:id/:name",
         component : OverviewComponent
       },{
         path : "specification",
