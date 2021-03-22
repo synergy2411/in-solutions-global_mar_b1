@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
@@ -17,19 +18,21 @@ import { DataService } from './services/data.service';
 import { ObservableDemoComponent } from './components/observable-demo/observable-demo.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { LoggerInterceptorService } from './services/logger-interceptor.service';
+import { APP_ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [         // Components | Directives | Pipes
-    AppComponent, UsersComponent, 
-    UserImageComponent, UserInfoComponent, HighlightDirective, 
-    PipeDemoComponent, CountryCodePipe, FilterPipe, LoginComponent, 
+    AppComponent, UsersComponent,
+    UserImageComponent, UserInfoComponent, HighlightDirective,
+    PipeDemoComponent, CountryCodePipe, FilterPipe, LoginComponent,
     RegisterComponent, ObservableDemoComponent
   ],
   imports: [              // Modules - Built-in or Custom Module
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [DataService,
     {

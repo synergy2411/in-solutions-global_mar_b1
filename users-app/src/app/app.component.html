@@ -1,6 +1,13 @@
 <div class="container">
   <p class="text-center display-4">The Awesome App</p>
-<!-- 
+
+
+
+  <hr>
+  <router-outlet></router-outlet>
+
+
+<!--
   <input type="text" [(ngModel)] = "title">
   <br>
   <button class="btn btn-primary" (click)="showUsers = !showUsers" >Toggle Users Component</button> -->
@@ -8,7 +15,7 @@
 
   <!-- <app-pipe-demo></app-pipe-demo> -->
 
-  <app-login></app-login>
+  <!-- <app-login></app-login> -->
 
   <!-- <app-register></app-register> -->
 
@@ -17,11 +24,11 @@
 
     <!-- <app-observable-demo></app-observable-demo> -->
 
-  <hr>
-  <br>
+  <!-- <hr>
+  <br> -->
 
   <!-- <app-users [title]="title" *ngIf="showUsers"></app-users> -->
-  <app-users [title]="title" *ngIf="authService.isAuthenticated()"></app-users>
+  <!-- <app-users [title]="title" *ngIf="authService.isAuthenticated()"></app-users> -->
 
 
 </div>
