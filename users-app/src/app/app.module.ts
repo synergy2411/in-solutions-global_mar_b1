@@ -19,13 +19,14 @@ import { ObservableDemoComponent } from './components/observable-demo/observable
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { LoggerInterceptorService } from './services/logger-interceptor.service';
 import { APP_ROUTES } from './app.routes';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [         // Components | Directives | Pipes
     AppComponent, UsersComponent,
     UserImageComponent, UserInfoComponent, HighlightDirective,
     PipeDemoComponent, CountryCodePipe, FilterPipe, LoginComponent,
-    RegisterComponent, ObservableDemoComponent
+    RegisterComponent, ObservableDemoComponent, HeaderComponent
   ],
   imports: [              // Modules - Built-in or Custom Module
     BrowserModule,

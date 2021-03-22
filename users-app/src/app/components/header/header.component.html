@@ -1,0 +1,27 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link"
+      [ngClass]="{'active' : isSelected(1)}"
+      (click) = "selectTab(1)"
+      [routerLink]="['login']">Login</a> </li>
+  <li class="nav-item">
+    <a class="nav-link"
+    [ngClass]="{'active' : isSelected(2)}"
+    (click) = "selectTab(2)"
+    [routerLink]="['register']">Register</a> </li>
+  <li class="nav-item">
+    <a class="nav-link"
+    [ngClass]="{'active' : isSelected(3)}"
+    (click) = "selectTab(3)"
+    [routerLink]="['users']">Users</a> </li>
+  <li class="nav-item">
+    <a class="nav-link"
+    [ngClass]="{'active' : isSelected(4)}"
+    (click) = "selectTab(4)"
+    [routerLink]="['pipe-demo']">Pipes</a> </li>
+  <li class="nav-item">
+    <a class="nav-link"
+    [ngClass]="{'active' : isSelected(5)}"
+    (click) = "selectTab(5)"
+    [routerLink]="['observable-demo']">Observables</a> </li>
+</ul>
