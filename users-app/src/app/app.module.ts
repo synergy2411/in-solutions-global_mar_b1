@@ -20,13 +20,16 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { LoggerInterceptorService } from './services/logger-interceptor.service';
 import { APP_ROUTES } from './app.routes';
 import { HeaderComponent } from './components/header/header.component';
+import { ProductComponent } from './components/product/product.component';
+import { OverviewComponent } from './components/product/overview/overview.component';
+import { SpecificationComponent } from './components/product/specification/specification.component';
 
 @NgModule({
   declarations: [         // Components | Directives | Pipes
     AppComponent, UsersComponent,
     UserImageComponent, UserInfoComponent, HighlightDirective,
     PipeDemoComponent, CountryCodePipe, FilterPipe, LoginComponent,
-    RegisterComponent, ObservableDemoComponent, HeaderComponent
+    RegisterComponent, ObservableDemoComponent, HeaderComponent, ProductComponent, OverviewComponent, SpecificationComponent
   ],
   imports: [              // Modules - Built-in or Custom Module
     BrowserModule,
