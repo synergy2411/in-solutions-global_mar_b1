@@ -25,6 +25,8 @@ import { ProductComponent } from './components/product/product.component';
 import { OverviewComponent } from './components/product/overview/overview.component';
 import { SpecificationComponent } from './components/product/specification/specification.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [         // Components | Directives | Pipes
@@ -39,7 +41,10 @@ import { LogoutComponent } from './components/logout/logout.component';
     ReactiveFormsModule,
     HttpClientModule,
     EmployeeModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production
+    })
   ],
   providers: [DataService,
     {

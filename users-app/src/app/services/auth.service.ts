@@ -27,6 +27,9 @@ export class AuthService {
         firebase.default.auth().currentUser.getIdToken()
           .then(token => {
             this.token = token;
+            // localStorage.setItem("token", token);
+            // const theToken = localStorage.getItem("token")
+            // console.log("The Token - ", theToken);
             this.router.navigate(["/users"])
           })
           .catch(err=>console.log(err));

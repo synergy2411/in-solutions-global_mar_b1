@@ -3,7 +3,7 @@ import { USER_DATA } from '../data/mocks';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { User } from '../model/user';
 import { AuthService } from './auth.service';
-
+import { map } from "rxjs/operators"
 @Injectable()
 export class DataService {
 
@@ -25,6 +25,11 @@ export class DataService {
     // })
 
     return this.httpClient.get<User[]>(this.BASE_URL)
+    // this.httpClient.get(this.BASE_URL)
+    // .pipe(map(response => <User[]>response))
+    // .subscribe(users =>{
+    //   localStorage.setItem("users", JSON.stringify(users));
+    // } )
   }
 
   createUser(){

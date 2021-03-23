@@ -1,0 +1,7 @@
+> ng add @angular/pwa
+> ng build --prod
+> npm install serve -g
+> cd dist/users-app
+> serve -> http://localhost:5000
+> Chrome Networks -> Offline Server
+> Try to reload the app

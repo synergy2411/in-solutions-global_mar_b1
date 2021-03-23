@@ -12,7 +12,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent implements OnInit{
   title = 'users-app';
   showUsers : boolean = true;
-  
+
   constructor(
     public dataService : DataService,
     public authService : AuthService
@@ -23,9 +23,11 @@ export class AppComponent implements OnInit{
       apiKey: "AIzaSyB53EEXhYPRSx92KfR5kptULoUSc1Ilcoo",
       authDomain: "in-solutions-28661.firebaseapp.com"
     })
+    // debugger;
   }
 
   onIncrement(){
+    // debugger;
     this.dataService.counter++;
   }
 

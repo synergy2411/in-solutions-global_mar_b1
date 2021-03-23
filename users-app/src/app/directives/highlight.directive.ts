@@ -10,7 +10,7 @@ export class HighlightDirective {
   @HostBinding('style.backgroundColor') bgColor  :any;
 
   @HostListener('mouseenter') onmouseenter(){
-    console.log("Mouse entered")
+    // console.log("Mouse entered")
     this.bgColor = this.favColor;
     this.theEvent.emit("yellow");
   }
