@@ -23,13 +23,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductComponent } from './components/product/product.component';
 import { OverviewComponent } from './components/product/overview/overview.component';
 import { SpecificationComponent } from './components/product/specification/specification.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [         // Components | Directives | Pipes
     AppComponent, UsersComponent,
     UserImageComponent, UserInfoComponent, HighlightDirective,
     PipeDemoComponent, CountryCodePipe, FilterPipe, LoginComponent,
-    RegisterComponent, ObservableDemoComponent, HeaderComponent, ProductComponent, OverviewComponent, SpecificationComponent
+    RegisterComponent, ObservableDemoComponent, HeaderComponent, ProductComponent, OverviewComponent, SpecificationComponent, LogoutComponent
   ],
   imports: [              // Modules - Built-in or Custom Module
     BrowserModule,

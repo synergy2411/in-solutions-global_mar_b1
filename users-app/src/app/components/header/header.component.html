@@ -3,12 +3,14 @@
     <a class="nav-link"
       [ngClass]="{'active' : isSelected(1)}"
       (click) = "selectTab(1)"
-      [routerLink]="['login']">Login</a> </li>
+      [routerLink]="['login']"
+      *ngIf="!authService.isAuthenticated()">Login</a> </li>
   <li class="nav-item">
     <a class="nav-link"
     [ngClass]="{'active' : isSelected(2)}"
     (click) = "selectTab(2)"
-    [routerLink]="['register']">Register</a> </li>
+    [routerLink]="['register']"
+    *ngIf="!authService.isAuthenticated()">Register</a> </li>
   <li class="nav-item">
     <a class="nav-link"
     [ngClass]="{'active' : isSelected(3)}"
@@ -29,4 +31,10 @@
     [ngClass]="{'active' : isSelected(6)}"
     (click) = "selectTab(6)"
     [routerLink]="['product']">Product</a> </li>
+  <li class="nav-item">
+    <a class="nav-link"
+    [ngClass]="{'active' : isSelected(7)}"
+    (click) = "selectTab(7)"
+    [routerLink]="['logout']"
+    *ngIf="authService.isAuthenticated()">Logout</a> </li>
 </ul>

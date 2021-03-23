@@ -1,5 +1,6 @@
 import { Routes } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
+import { LogoutComponent } from "./components/logout/logout.component";
 import { ObservableDemoComponent } from "./components/observable-demo/observable-demo.component";
 import { PipeDemoComponent } from "./components/pipe-demo/pipe-demo.component";
 import { OverviewComponent } from "./components/product/overview/overview.component";
@@ -43,6 +44,9 @@ export const APP_ROUTES : Routes = [
         component : SpecificationComponent
       }
     ]
+  },{
+    path : "logout",
+    component : LogoutComponent
   },{
     path : "**",              // http://localhost:4200/not-exist => /login
     redirectTo : "/login",
