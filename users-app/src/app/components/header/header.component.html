@@ -35,6 +35,11 @@
     <a class="nav-link"
     [ngClass]="{'active' : isSelected(7)}"
     (click) = "selectTab(7)"
+    [routerLink]="['lazy']">Lazy</a> </li>
+  <li class="nav-item">
+    <a class="nav-link"
+    [ngClass]="{'active' : isSelected(7)}"
+    (click) = "selectTab(7)"
     [routerLink]="['logout']"
     *ngIf="authService.isAuthenticated()">Logout</a> </li>
 </ul>
