@@ -1,5 +1,16 @@
 <p class="display-4">The Counter : {{ counter }}</p>
 <hr>
 <button class="btn btn-primary" (click)="onIncrease()">Increase</button>
-<button class="btn btn-dark" (click)="onDecrease()">Increase</button>
-<button class="btn btn-success" (click)="onAdd(10)">Increase</button>
+<button class="btn btn-dark" (click)="onDecrease()">Decrease</button>
+<button class="btn btn-success" (click)="onAdd(10)">Add</button>
+<button class="btn btn-warning" (click)="onSubtract(5)">Subtract</button>
+<br>
+<br>
+<button class="btn btn-block btn-outline-danger" (click)= "onStoreResult()">Store Result</button>
+<hr>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let val of counterResults">
+    {{ val }}
+  </li>
+</ul>
