@@ -1,4 +1,5 @@
 import { Routes } from "@angular/router";
+import { CounterComponent } from "./components/counter/counter.component";
 import { LoginComponent } from "./components/login/login.component";
 import { LogoutComponent } from "./components/logout/logout.component";
 import { ObservableDemoComponent } from "./components/observable-demo/observable-demo.component";
@@ -50,6 +51,9 @@ export const APP_ROUTES : Routes = [
   },{
     path : "logout",
     component : LogoutComponent
+  },{
+    path : "counter",
+    component : CounterComponent
   },{
     path : "**",              // http://localhost:4200/not-exist => /login
     redirectTo : "/login",

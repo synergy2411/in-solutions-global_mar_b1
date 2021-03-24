@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { EmployeeModule } from './modules/employee/employee.module';
+import { StoreModule } from "@ngrx/store";
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
@@ -27,13 +28,16 @@ import { SpecificationComponent } from './components/product/specification/speci
 import { LogoutComponent } from './components/logout/logout.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { rootReducer } from "./store/reducers/root.reducer";
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
   declarations: [         // Components | Directives | Pipes
     AppComponent, UsersComponent,
     UserImageComponent, UserInfoComponent, HighlightDirective,
     PipeDemoComponent, CountryCodePipe, FilterPipe, LoginComponent,
-    RegisterComponent, ObservableDemoComponent, HeaderComponent, ProductComponent, OverviewComponent, SpecificationComponent, LogoutComponent
+    RegisterComponent, ObservableDemoComponent, HeaderComponent, ProductComponent,
+    OverviewComponent, SpecificationComponent, LogoutComponent, CounterComponent
   ],
   imports: [              // Modules - Built-in or Custom Module
     BrowserModule,
@@ -41,6 +45,9 @@ import { environment } from '../environments/environment';
     ReactiveFormsModule,
     HttpClientModule,
     EmployeeModule,
+    StoreModule.forRoot({
+      root : rootReducer
+    }),
     RouterModule.forRoot(APP_ROUTES),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
