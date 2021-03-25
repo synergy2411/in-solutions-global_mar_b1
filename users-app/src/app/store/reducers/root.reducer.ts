@@ -36,6 +36,18 @@ export function rootReducer(
         ...state,
         result : [...state.result, state.counter]
       }
+    case fromActions.DELETE_RESULT : {
+     const duplicateArray = state.result.filter((value, index) => {
+       return index !== action.value;
+     })
+
+    // const duplicateArray = [...state.result];
+     console.log("[DUPLICATE ARRAY]", duplicateArray);
+     return {
+       ...state,
+       result : duplicateArray
+     }
+    }
     default:
       return state;
   }

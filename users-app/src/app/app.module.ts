@@ -5,6 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { EmployeeModule } from './modules/employee/employee.module';
 import { StoreModule } from "@ngrx/store";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
@@ -48,6 +49,7 @@ import { CounterComponent } from './components/counter/counter.component';
     StoreModule.forRoot({
       root : rootReducer
     }),
+    StoreDevtoolsModule.instrument({logOnly : environment.production}),
     RouterModule.forRoot(APP_ROUTES),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production

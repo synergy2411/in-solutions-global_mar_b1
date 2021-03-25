@@ -5,6 +5,12 @@ export const DECREMENT = "DECREMENT";
 export const ADD_COUNTER = "ADD_COUNTER";
 export const SUBTRACT_COUNTER = "SUBTRACT_COUNTER";
 export const STORE_RESULT = "STORE_RESULT";
+export const DELETE_RESULT = "DELETE_RESULT";
+
+export class onDeleteResult implements Action{
+  readonly type: string = DELETE_RESULT;
+  constructor(public value : number){}
+}
 
 export class onStoreResult implements Action{
   readonly type: string = STORE_RESULT;
@@ -23,4 +29,4 @@ export class onSubtractCounter implements Action{
   constructor(public value : number){}
 }
 
-export type CounterAction = onAddCounter | onSubtractCounter | onStoreResult
+export type CounterAction = onAddCounter | onSubtractCounter | onStoreResult | onDeleteResult;

@@ -42,4 +42,9 @@ export class CounterComponent implements OnInit {
   onStoreResult(){
     this.store.dispatch(new fromActions.onStoreResult(0))
   }
+
+  onDelete(i : number){
+    this.store.dispatch(new fromActions.onDeleteResult(i));
+  }
+
 }

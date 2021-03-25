@@ -10,7 +10,7 @@
 <hr>
 
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let val of counterResults">
+  <li class="list-group-item" *ngFor="let val of counterResults; index as i;" (click)="onDelete(i)">
     {{ val }}
   </li>
 </ul>
