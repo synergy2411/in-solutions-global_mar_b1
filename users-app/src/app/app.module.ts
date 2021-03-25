@@ -47,7 +47,8 @@ import { CounterComponent } from './components/counter/counter.component';
     HttpClientModule,
     EmployeeModule,
     StoreModule.forRoot({
-      root : rootReducer
+      root : rootReducer,
+      // result : resultReducer
     }),
     StoreDevtoolsModule.instrument({logOnly : environment.production}),
     RouterModule.forRoot(APP_ROUTES),

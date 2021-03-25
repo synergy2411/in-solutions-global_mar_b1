@@ -1,0 +1,9 @@
+> ng build --prod
+
+> npm install firebase-tools -g
+
+> firebase login
+
+> firebase init
+
+> firebase deploy

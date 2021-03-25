@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DataService } from '../services/data.service';
 
 import { UsersComponent } from './users.component';
 
@@ -8,7 +9,8 @@ describe('UsersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsersComponent ]
+      declarations: [ UsersComponent ],
+      providers :[DataService]
     })
     .compileComponents();
   });

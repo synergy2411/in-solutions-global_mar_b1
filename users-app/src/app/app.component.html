@@ -4,7 +4,14 @@
   <br />
   <p class="text-center display-4">The Awesome App</p>
 
-  <app-new-employee></app-new-employee>
+  <!-- <app-new-employee></app-new-employee> -->
+
+  The HTML Snippets : {{ htmlSnippets }}
+
+  <p [innerHTML] = "htmlSnippets">The paragraph...</p>
+
+  <a (click)="dangerUrl" href="">Danger URL</a>
+  <a (click)="safeUrl" href="">Safe URL</a>
 
   <hr />
   <router-outlet></router-outlet>
